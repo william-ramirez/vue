@@ -5,8 +5,7 @@ var app = new Vue({
     image: './assets/sample-img.jpg',
     inStock: true,
     something: ["something 1", "something 2", "something 3", "something 4"],
-    variants: [
-      {
+    variants: [{
         variantID: 2234,
         variantColor: "green",
         variantImage: './assets/sample-img.jpg'
@@ -20,10 +19,10 @@ var app = new Vue({
     cart: 0
   },
   methods: {
-    addToCart: function () {
+    addToCart: function() {
       this.cart += 1
     },
-    updateProduct: function (variantImage) {
+    updateProduct: function(variantImage) {
       this.image = variantImage
     }
   }
