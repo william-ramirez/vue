@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Title</title>
+  <link rel="stylesheet" href="product_style.css">
+</head>
+
+<body>
+
+  <div class="nav-bar">
+
+  </div>
+
+  <div id="app">
+    <div class="product">
+      <div class="product-image">
+        <img :src="image" alt="">
+      </div>
+      <div class="product-info">
+        <h1>{{ product }}</h1>
+        <p v-if="inStock">My first paragraph.</p>
+        <p v-else>My first paragraph you.</p>
+
+        <ul>
+          <li v-for="whatever in something">{{ whatever }}</li>
+        </ul>
+
+        <div v-for="variant in variants" :key="variant.variantID" class="color-box" :style="{ backgroundColor: variant.variantColor }" @mouseover="updateProduct(variant.variantImage)">
+        </div>
+
+        <button v-on:click="addToCart" type="button" name="button">add to cart</button>
+
+        <div class="cart">
+          <p>Cart({{cart}})</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
